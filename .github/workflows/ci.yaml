@@ -1,0 +1,30 @@
+on: push
+name: Run phpunit testsuite
+jobs:
+  phpunit:
+    runs-on: ubuntu-latest
+    container:
+      # image: kirschbaumdevelopment/laravel-test-runner
+      image: mattiasgeniar/php73
+
+    steps:
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+
+    # - name: Setup Database
+    #   run: |
+    #     service mysql start
+    #     mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
+
+    - name: Install composer dependencies
+      run: |
+        composer install --no-scripts
+
+    - name: Prepare Laravel Application
+      run: |
+        cp .env.ci .env
+        php artisan key:generate
+
+    - name: Run Testsuite
+      run: vendor/bin/phpunit tests/
