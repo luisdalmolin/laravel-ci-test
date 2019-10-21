@@ -7,6 +7,17 @@ jobs:
       # image: kirschbaumdevelopment/laravel-test-runner
       image: mattiasgeniar/php73
 
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_USER: root
+          MYSQL_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: test
+          ports:
+            - 3306:3306
+
     steps:
     - uses: actions/checkout@v1
       with:
