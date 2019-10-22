@@ -4,8 +4,8 @@ jobs:
   phpunit:
     runs-on: ubuntu-latest
     container:
-      # image: kirschbaumdevelopment/laravel-test-runner
-      image: mattiasgeniar/php73
+      image: kirschbaumdevelopment/laravel-test-runner
+      # image: mattiasgeniar/php73
 
     services:
       mysql:
