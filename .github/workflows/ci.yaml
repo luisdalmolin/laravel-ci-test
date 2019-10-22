@@ -28,6 +28,10 @@ jobs:
     #     service mysql start
     #     mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
 
+    - name: Test MySQL connection
+      run: |
+        mysql -u root -proot -e "show tables from test;"
+
     - name: Install composer dependencies
       run: |
         composer install --no-scripts
