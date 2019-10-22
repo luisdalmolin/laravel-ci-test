@@ -16,7 +16,7 @@ jobs:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: test
         ports:
-        - 3306:3306
+        - 33306:3306
 
     steps:
     - uses: actions/checkout@v1
