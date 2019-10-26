@@ -20,7 +20,8 @@ jobs:
     steps:
     - name: Test MySQL connection
       run: |
-        mysql -h mysql --port 3306 -u root -ppassword -e "CREATE DATABASE IF NOT EXISTS test;"
+        mysql -h localhost --port 3306 -u root -ppassword -e "CREATE DATABASE IF NOT EXISTS test;"
+        # mysql -h mysql --port 3306 -u root -ppassword -e "CREATE DATABASE IF NOT EXISTS test;"
         # mysql -h mysql --port 8888 -u root -ppassword -e "CREATE DATABASE IF NOT EXISTS test;"
 
     - uses: actions/checkout@v1
