@@ -13,8 +13,8 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
 
     runs-on: ubuntu-latest
-    container:
-      image: kirschbaumdevelopment/laravel-test-runner
+    # container:
+      # image: kirschbaumdevelopment/laravel-test-runner
       # image: mattiasgeniar/php73
 
     steps:
