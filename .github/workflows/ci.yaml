@@ -3,14 +3,23 @@ name: Run phpunit testsuite
 jobs:
   phpunit:
     services:
-      mysql:
-        image: mysql:5.7
+      # mysql:
+      #   image: mysql:5.7
+      #   env:
+      #     MYSQL_ROOT_PASSWORD: password
+      #     MYSQL_DATABASE: test
+      #   ports:
+      #     - 33306:3306
+      #   options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+      postgres:
+        image: postgres:10.8
         env:
-          MYSQL_ROOT_PASSWORD: password
-          MYSQL_DATABASE: test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test
         ports:
-          - 33306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+        - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     runs-on: ubuntu-latest
     container:
