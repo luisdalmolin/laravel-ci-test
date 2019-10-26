@@ -16,8 +16,6 @@ class UserTest extends TestCase
      */
     public function testExample()
     {
-        var_dump(config('database'));
-
         $user = factory(User::class)->create();
         $this->assertTrue($user->exists);
     }
