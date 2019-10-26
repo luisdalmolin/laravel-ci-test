@@ -17,7 +17,7 @@ jobs:
       # image: kirschbaumdevelopment/laravel-test-runner
       image: mattiasgeniar/php73
 
-    # steps:
+    steps:
     # - name: Verify MySQL connection from host
     #   run: |
     #     apt-get install -y mysql-client
