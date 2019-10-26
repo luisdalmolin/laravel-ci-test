@@ -14,8 +14,8 @@ jobs:
 
     runs-on: ubuntu-latest
     container:
-      # image: kirschbaumdevelopment/laravel-test-runner
-      image: mattiasgeniar/php73
+      image: kirschbaumdevelopment/laravel-test-runner
+      # image: mattiasgeniar/php73
 
     steps:
     # - name: Verify MySQL connection from host
@@ -34,7 +34,7 @@ jobs:
 
     - name: Test MySQL connection
       run: |
-        mysql -u root -proot -e "show tables from test;"
+        mysql -h 127.0.0.1 -u root -proot -e "show tables from test;"
 
     - name: Install composer dependencies
       run: |
