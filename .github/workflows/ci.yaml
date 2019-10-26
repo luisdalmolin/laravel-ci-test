@@ -17,11 +17,11 @@ jobs:
       # image: kirschbaumdevelopment/laravel-test-runner
       image: mattiasgeniar/php73
 
-    steps:
-    - name: Verify MySQL connection from host
-      run: |
-        apt-get install -y mysql-client
-        mysql --host 127.0.0.1 --port 8888 -uroot -proot -e "SHOW DATABASES"
+    # steps:
+    # - name: Verify MySQL connection from host
+    #   run: |
+    #     apt-get install -y mysql-client
+    #     mysql --host 127.0.0.1 --port 8888 -uroot -proot -e "SHOW DATABASES"
 
     - uses: actions/checkout@v1
       with:
