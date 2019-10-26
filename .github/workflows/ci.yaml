@@ -6,7 +6,7 @@ jobs:
       mysql:
         image: mysql:8.0
         env:
-          MYSQL_ROOT_PASSWORD: root
+          MYSQL_ROOT_PASSWORD: password
           MYSQL_DATABASE: test
         ports:
           - 8888:3306
@@ -34,7 +34,7 @@ jobs:
 
     - name: Test MySQL connection
       run: |
-        mysql -h 127.0.0.1 --port 8888 -u root -proot -e "CREATE DATABASE IF NOT EXISTS test;"
+        mysql -h mysql --port 8888 -u root -ppassword -e "CREATE DATABASE IF NOT EXISTS test;"
 
     - name: Install composer dependencies
       run: |
