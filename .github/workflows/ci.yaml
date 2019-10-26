@@ -34,7 +34,7 @@ jobs:
 
     - name: Test MySQL connection
       run: |
-        mysql -h mysql --port 8888 -u root -ppassword -e "CREATE DATABASE IF NOT EXISTS test;"
+        mysql -h 127.0.0.1 --port 8888 -u root -ppassword -e "CREATE DATABASE IF NOT EXISTS test;"
 
     - name: Install composer dependencies
       run: |
