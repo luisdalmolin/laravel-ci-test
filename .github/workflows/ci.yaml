@@ -2,11 +2,6 @@ on: push
 name: Run phpunit testsuite
 jobs:
   phpunit:
-    runs-on: ubuntu-latest
-    container:
-      image: kirschbaumdevelopment/laravel-test-runner
-      # image: mattiasgeniar/php73
-
     services:
       mysql:
         image: mysql:5.7
@@ -16,14 +11,19 @@ jobs:
           MYSQL_ROOT_PASSWORD: root
           MYSQL_DATABASE: test
         ports:
-        - 3306
+          - 8888:3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    runs-on: ubuntu-latest
+    container:
+      # image: kirschbaumdevelopment/laravel-test-runner
+      image: mattiasgeniar/php73
 
     steps:
     - name: Verify MySQL connection from host
       run: |
         apt-get install -y mysql-client
-        mysql --host 127.0.0.1 --port ${{ job.services.mysql.ports['3306'] }} -uroot -ppassword -e "SHOW DATABASES"
+        mysql --host 127.0.0.1 --port 8888 -uroot -proot -e "SHOW DATABASES"
 
     - uses: actions/checkout@v1
       with:
