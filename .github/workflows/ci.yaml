@@ -41,5 +41,10 @@ jobs:
         cp .env.ci .env
         php artisan key:generate
 
+    - name: Install front-end dependencies
+      run: |
+        npm install
+        npm run dev
+
     - name: Run Testsuite
       run: vendor/bin/phpunit tests/
