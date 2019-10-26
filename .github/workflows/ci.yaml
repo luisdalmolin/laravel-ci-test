@@ -18,10 +18,9 @@ jobs:
       # image: mattiasgeniar/php73
 
     steps:
-    # - name: Verify MySQL connection from host
-    #   run: |
-    #     apt-get install -y mysql-client
-    #     mysql --host 127.0.0.1 --port 8888 -uroot -proot -e "SHOW DATABASES"
+    - name: Test MySQL connection
+      run: |
+        mysql -h 127.0.0.1 --port 8888 -u root -ppassword -e "CREATE DATABASE IF NOT EXISTS test;"
 
     - uses: actions/checkout@v1
       with:
@@ -31,10 +30,6 @@ jobs:
     #   run: |
     #     service mysql start
     #     mysql -e 'CREATE DATABASE IF NOT EXISTS test;'
-
-    - name: Test MySQL connection
-      run: |
-        mysql -h 127.0.0.1 --port 8888 -u root -ppassword -e "CREATE DATABASE IF NOT EXISTS test;"
 
     - name: Install composer dependencies
       run: |
