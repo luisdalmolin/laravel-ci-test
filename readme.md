@@ -1,5 +1,7 @@
 # Laravel Github Actions CI
 
+[![Actions Status](https://github.com/luisdalmolin/laravel-ci-test/workflows/CI/badge.svg)](https://github.com/luisdalmolin/laravel-ci-test/actions)
+
 This repository is an example on how you can use Github Actions to run your test suite.
 
 Things you may want to look:
