@@ -11,7 +11,7 @@ Things you may want to look:
 * [Example Build](https://github.com/luisdalmolin/laravel-ci-test/runs/276215112)
 * [Docker Container Repository](https://github.com/kirschbaum-development/laravel-test-runner-container)
 
-Also, if you didn't come from the blogpost, you may be interesting on checking the full blogpost [here](TODO).
+Also, if you didn't come from the blogpost, you may be interesting on checking the full blogpost [here](https://kirschbaumdevelopment.com/news-articles/using-github-actions-to-setup-ci-cd-with-laravel-and-mysql).
 
 ## Issues
 
